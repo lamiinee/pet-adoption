@@ -5,3 +5,12 @@ async function start() {
   document.querySelector("#temperature-output").textContent = temp
 }
 start()
+
+async function petArea() {
+  const petPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
+  const petData = await petPromise.json()
+  petData.forEach(pet => {
+    console.log(pet.name)
+  });
+}
+petArea()
